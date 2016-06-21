@@ -1,0 +1,40 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h1>Корзина</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Страниц</th>
+            <th>ISBN</th>
+            <th>Шт.</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Разработка веб-приложений с помощью PHP и MySQL</td>
+            <td>Люк Веллинг, Лаура Томсон</td>
+            <td>848</td>
+            <td>978-5-8459-1574-0, 978-0-672-32916-6</td>
+            <td>
+                <input class="form-control input-sm" type="number" value="1">
+            </td>
+        </tr>
+        <tr>
+            <td>PHP и MySQL. Разработка Web-приложений</td>
+            <td>Денис Колисниченко</td>
+            <td>560</td>
+            <td>978-5-9775-0876-6</td>
+            <td>
+                <input class="form-control input-sm" type="number" value="1">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-success btn-lg pull-right" href="/cart/confirm">Подтвердить</a>
+{% endblock %}

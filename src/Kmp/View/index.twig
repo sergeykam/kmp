@@ -1,0 +1,48 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h1>Магазин книг</h1>
+
+    <form class="" action="/search" method="GET">
+        <div class="input-group">
+            <input type="text" class="form-control" name="query" placeholder="Название книги, автор"
+                   value="{% if query is defined %}{{ query }}{% endif %}">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Найти</button>
+            </span>
+        </div>
+    </form>
+
+    {% if items is defined %}
+        <h2>Результаты поиска</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Страниц</th>
+                <th>ISBN</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.pages }}</td>
+                    <td>{{ item.ISBN }}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

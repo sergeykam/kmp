@@ -1,0 +1,14 @@
+{
+    "require": {
+        "silex/silex": "~2.0",
+        "twig/twig": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kmp\\Controller\\": "src/Kmp/Controller"
+            , "Kmp\\Core\\": "src/Kmp/Core"
+            , "Kmp\\Model\\": "src/Kmp/Model"
+            , "Kmp\\Entity\\": "src/Kmp/Entity"
+        }
+    }
+}
